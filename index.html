@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Tabb Repair — Handyman services, carpentry, and woodwork for residential clients in the East Bay." />
+  <meta name="robots" content="noindex, nofollow" />
+  <title>Tabb Repair</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <style>
+    /* ── TOKENS ─────────────────────────────────────────── */
+    :root {
+      --teal:      #143642;
+      --teal-mid:  #1a4455;
+      --walnut:    #6b4226;
+      --terracotta:#f06543;
+      --sage:      #71786a;
+      --cream:     #ceb992;
+      --cream-dim: #a8926e;
+      --white:     #f5f0e8;
+    }
+
+    /* ── RESET ──────────────────────────────────────────── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      background-color: var(--teal);
+      color: var(--cream);
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 300;
+      font-size: 17px;
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ── LAYOUT ─────────────────────────────────────────── */
+    .container {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+
+    /* ── NAV ────────────────────────────────────────────── */
+    nav {
+      padding: 2rem 0 1.5rem;
+      border-bottom: 1px solid rgba(107, 66, 38, 0.3);
+    }
+
+    nav .container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .nav-logo {
+      font-family: 'DM Serif Display', serif;
+      font-size: 1.25rem;
+      color: var(--cream);
+      letter-spacing: 0.02em;
+      text-decoration: none;
+    }
+
+    .nav-contact {
+      font-size: 0.85rem;
+      color: var(--cream-dim);
+      letter-spacing: 0.04em;
+    }
+
+    /* ── HERO ───────────────────────────────────────────── */
+    .hero {
+      padding: 6rem 0 4rem;
+    }
+
+    .hero-name {
+      font-family: 'DM Serif Display', serif;
+      font-size: clamp(3.5rem, 10vw, 7.5rem);
+      color: var(--white);
+      line-height: 1;
+      letter-spacing: -0.02em;
+    }
+
+    /* The carpenter's pencil line — signature element */
+    .pencil-rule {
+      display: block;
+      width: 100%;
+      height: 3px;
+      background: linear-gradient(
+        to right,
+        var(--walnut) 0%,
+        #8b5a32 40%,
+        var(--walnut) 70%,
+        transparent 100%
+      );
+      margin: 1.5rem 0 2rem;
+      border-radius: 1px;
+    }
+
+    .hero-description {
+      max-width: 520px;
+      font-size: 1.1rem;
+      color: var(--cream-dim);
+      font-weight: 300;
+      line-height: 1.7;
+    }
+
+    /* ── CTA ────────────────────────────────────────────── */
+    .cta-wrap {
+      margin-top: 2.5rem;
+      display: flex;
+      align-items: center;
+      gap: 2rem;
+      flex-wrap: wrap;
+    }
+
+    .btn-estimate {
+      display: inline-block;
+      background: var(--terracotta);
+      color: var(--white);
+      text-decoration: none;
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 500;
+      font-size: 0.95rem;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      padding: 0.85rem 2rem;
+      border-radius: 2px;
+      transition: background 0.2s ease, transform 0.15s ease;
+    }
+
+    .btn-estimate:hover {
+      background: #d9553a;
+      transform: translateY(-1px);
+    }
+
+    .btn-estimate:focus-visible {
+      outline: 2px solid var(--terracotta);
+      outline-offset: 3px;
+    }
+
+    .cta-phone {
+      font-size: 0.95rem;
+      color: var(--sage);
+      letter-spacing: 0.03em;
+    }
+
+    .cta-phone a {
+      color: var(--cream-dim);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .cta-phone a:hover { color: var(--cream); }
+
+    /* ── DIVIDER ────────────────────────────────────────── */
+    .section-divider {
+      border: none;
+      border-top: 1px solid rgba(113, 120, 106, 0.25);
+      margin: 4rem 0;
+    }
+
+    /* ── ABOUT ──────────────────────────────────────────── */
+    .about {
+      padding-bottom: 5rem;
+    }
+
+    .about-eyebrow {
+      font-size: 0.75rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--sage);
+      margin-bottom: 1.5rem;
+    }
+
+    .about-text {
+      max-width: 600px;
+      font-size: 1rem;
+      color: var(--cream-dim);
+      line-height: 1.75;
+    }
+
+    /* ── CONTACT ────────────────────────────────────────── */
+    .contact {
+      background: var(--teal-mid);
+      border-top: 1px solid rgba(107, 66, 38, 0.3);
+      padding: 4rem 0;
+    }
+
+    .contact-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 2rem;
+    }
+
+    .contact-heading {
+      font-family: 'DM Serif Display', serif;
+      font-size: 2rem;
+      color: var(--white);
+      line-height: 1.2;
+    }
+
+    .contact-details {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+      font-size: 0.95rem;
+    }
+
+    .contact-details a {
+      color: var(--cream-dim);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .contact-details a:hover { color: var(--terracotta); }
+
+    .contact-label {
+      color: var(--sage);
+      font-size: 0.75rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      margin-bottom: 0.1rem;
+    }
+
+    /* ── FOOTER ─────────────────────────────────────────── */
+    footer {
+      padding: 1.5rem 0;
+      border-top: 1px solid rgba(113, 120, 106, 0.15);
+    }
+
+    footer .container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+
+    .footer-text {
+      font-size: 0.8rem;
+      color: var(--sage);
+    }
+
+    .footer-location {
+      font-size: 0.8rem;
+      color: var(--sage);
+      letter-spacing: 0.04em;
+    }
+
+    /* ── RESPONSIVE ─────────────────────────────────────── */
+    @media (max-width: 680px) {
+      .hero { padding: 4rem 0 3rem; }
+
+      .contact-inner {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      nav .container {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+      }
+    }
+
+    /* ── REDUCED MOTION ─────────────────────────────────── */
+    @media (prefers-reduced-motion: reduce) {
+      .btn-estimate { transition: none; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <div class="container">
+      <a href="/" class="nav-logo">Tabb Repair</a>
+      <span class="nav-contact">Berkeley, CA &nbsp;·&nbsp; East Bay</span>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="container">
+      <h1 class="hero-name">Tabb<br>Repair</h1>
+      <span class="pencil-rule" role="presentation"></span>
+      <p class="hero-description">
+        Handyman services, carpentry, and woodwork for residential clients in the East Bay.
+      </p>
+      <div class="cta-wrap">
+        <a class="btn-estimate" href="mailto:info@tabbrepair.com?subject=Estimate%20Request">
+          Request an Estimate
+        </a>
+        <span class="cta-phone">or call <a href="tel:+15104094389">(510) 409-4389</a></span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section class="about">
+    <div class="container">
+      <p class="about-eyebrow">About</p>
+      <p class="about-text">
+        Tabb Repair is a one-person handyman and carpentry business based in Berkeley, California. With over fifteen years of hands-on experience across residential repair and carpentry, I take pride in honest estimates, careful work, and leaving your home better than I found it.
+      </p>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="contact">
+    <div class="container">
+      <div class="contact-inner">
+        <h2 class="contact-heading">Let's talk<br>about your project.</h2>
+        <div class="contact-details">
+          <div>
+            <p class="contact-label">Email</p>
+            <a href="mailto:info@tabbrepair.com">info@tabbrepair.com</a>
+          </div>
+          <div>
+            <p class="contact-label">Phone</p>
+            <a href="tel:+15104094389">(510) 409-4389</a>
+          </div>
+          <div>
+            <p class="contact-label">Service Area</p>
+            <span style="color: var(--cream-dim);">Berkeley &amp; the East Bay</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container">
+      <span class="footer-text">&copy; 2026 Tabb Repair LLC</span>
+      <span class="footer-location">Berkeley, CA</span>
+    </div>
+  </footer>
+
+</body>
+</html>
